@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		hr,
+		p,
+		blockquote,
+		dl,
+		dt,
+		dd,
+		ul,
+		ol,
+		li,
+		pre,
+		form,
+		fieldset,
+		legend,
+		button,
+		input,
+		textarea,
+		th,
+		td {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body,
+		button,
+		input,
+		select,
+		textarea {
+			font: 12px/1.5tahoma, arial, \5b8b\4f53;
+		}
+		
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-size: 100%;
+		}
+		
+		address,
+		cite,
+		dfn,
+		em,
+		var {
+			font-style: normal;
+		}
+		
+		code,
+		kbd,
+		pre,
+		samp {
+			font-family: couriernew, courier, monospace;
+		}
+		
+		small {
+			font-size: 12px;
+		}
+		
+		ul,
+		ol {
+			list-style: none;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		a:hover {
+			text-decoration: underline;
+		}
+		
+		sup {
+			vertical-align: text-top;
+		}
+		
+		sub {
+			vertical-align: text-bottom;
+		}
+		
+		legend {
+			color: #000;
+		}
+		
+		fieldset,
+		img {
+			border: 0;
+		}
+		
+		button,
+		input,
+		select,
+		textarea {
+			font-size: 100%;
+		}
+		
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		.checkBox {
+			width: 560px;
+		}
+		/*自定义单复选框样式开始*/
+		
+		.checkBox input {
+			display: none;
+		}
+		
+		.diyCheckBox {
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			border: 1px solid #dddede;
+			position: relative;
+			top: 3px;
+			margin-right: 5px;
+			color: #595757;
+		}
+		
+		.diyCheckBox b {
+			display: block;
+			width: 8px;
+			height: 8px;
+			margin: 3px;
+			background: #519bf4;
+			opacity: 0;
+			transition: opacity .3s;
+		}
+		
+		input[type=radio]:checked +.diyCheckBox b,
+		input[type=checkBox]:checked +.diyCheckBox b {
+			opacity: 1;
+			transition: opacity .3s;
+		}
+		/*自定义单复选框样式结束*/
+		
+		.ensure {
+			background: #519bf4;
+			color: white;
+			font-size: 12px;
+			padding: 7px 23px;
+			border: none;
+			outline: none;
+		}
+		
+		.more,
+		.more:hover {
+			text-decoration: none;
+			color: #595757;
+		}
+		
+		.checkBoxBottom label {
+			margin-right: 30px;
+			font-size: 12px;
+		}
+		
+		.classify label {
+			margin-right: 20px;
+			font-size: 12px;
+		}
+		
+		.checkBox h2 {
+			float: left;
+			line-height: 22px;
+			font-size: 12px;
+			color: #686767;
+			margin-right: 12px;
+		}
+		
+		.field,
+		.way,
+		.formality {
+			padding: 14px 0;
+			border-top: 1px dotted #dedede;
+		}
+		
+		.checkBox label i {
+			display: inline-block;
+			background: url("./sanjiao.jpg") no-repeat;
+			width: 7px;
+			height: 6px;
+			background-size: auto;
+		}
+		
+		.checkBox label i.rotate {
+			transform: rotate(180deg);
+			transition: transform .5s;
+		}
+		
+		.checkBoxTop h1 {
+			float: left;
+			font-size: 18px;
+			color: #595757;
+			margin-right: 54px;
+		}
+		
+		.appendDomBox p {
+			color: #595757;
+			width: 78px;
+			height: 20px;
+			line-height: 20px;
+			text-align: center;
+			border: 1px solid #9dc7f9;
+			float: left;
+			margin-right: 12px;
+			font-size: 12px;
+		}
+		
+		.appendDomBox p .checkClose {
+			color: #9dc7f9;
+			float: right;
+			margin-right: 5px;
+		}
+		
+		.checkBoxTop::after {
+			content: "";
+			display: block;
+			width: 1px;
+			height: 1px;
+			clear: both;
+		}
+		
+		.classifyDetaill {
+			display: none;
+		}
+		
+		.moreDetail {
+			display: inline;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<!--checkBox-->
+	<div class="checkBox" id="checkBox">
+		<form action="">
+			<!--更多数据盒子-->
+			<div class="checkBoxTop">
+				<h1>
+		  			更多数据
+		  		</h1>
+				<div class="appendDomBox" id="appendDomBox">
+
+				</div>
+			</div>
+			<div class="checkBoxCenter">
+				<!--数据分类-->
+				<div class="classify">
+					<h2>数据分类：</h2>
+					<div class="classifyCheck" id="classifyCheck">
+						<label for="">
+							<input type="radio" name="radioBox" value="不限">
+							<span class="diyCheckBox"><b></b></span> 不限
+						</label>
+
+						<label for="">
+							<input type="radio" name="radioBox" value="产品">
+							<span class="diyCheckBox"><b></b></span> 产品
+							<i></i>
+						</label>
+						<label for="">
+							<input type="radio" name="radioBox" value="入口">
+							<span class="diyCheckBox"><b></b></span> 入口
+							<i></i>
+						</label>
+						<label for="">
+							<input type="radio" name="radioBox" value="企业">
+							<span class="diyCheckBox"><b></b></span> 企业
+							<i></i>
+						</label>
+						<label for="">
+							<input type="radio" name="radioBox" value="行业">
+							<span class="diyCheckBox"><b></b></span> 行业
+							<i></i>
+						</label>
+						<label for="">
+							<input type="radio" name="radioBox" value="城市">
+							<span class="diyCheckBox"><b></b></span> 城市
+							<i></i>
+						</label>
+					</div>
+				</div>
+				<!--数据分类详情-->
+				<div class="classifyDetaill" id="classifyDetaill"></div>
+			</div>
+			<div class="checkBoxBottom">
+				<!--相关领域-->
+				<div class="field">
+					<h2>相关领域： </h2>
+					<div class="fieldCheck">
+						<label for="">
+							<input type="checkBox" value="不限">
+							<span class="diyCheckBox"><b></b></span>不限
+						</label>
+						<label for="">
+							<input type="checkBox" value="北京">
+							<span class="diyCheckBox"><b></b></span> 北京
+						</label>
+						<label for="">
+							<input type="checkBox" value="广州">
+							<span class="diyCheckBox"><b></b></span> 广州
+						</label>
+						<label for="">
+							<input type="checkBox" value="无锡">
+							<span class="diyCheckBox"><b></b></span> 无锡
+						</label>
+						<label for="">
+							<input type="checkBox" value="武汉">
+							<span class="diyCheckBox"><b></b></span> 武汉
+						</label>
+						<label for="">
+							<input type="checkBox" value="青岛">
+							<span class="diyCheckBox"><b></b></span> 青岛
+						</label>
+						<div class="moreDetail" id="moreDetail">
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+							<label for="">
+								<input type="checkBox" value="青岛">
+								<span class="diyCheckBox"><b></b></span> 青岛
+							</label>
+						</div>
+						<a href="javascript:;" class="more" id="more">更多</a>
+					</div>
+				</div>
+				<!--付费方式-->
+				<div class="way">
+					<h2>付费方式：</h2>
+					<div class="wayCheck">
+						<label for="">
+							<input type="checkBox" value="不限">
+							<span class="diyCheckBox"><b></b></span> 不限
+						</label>
+						<label for="">
+							<input type="checkBox" value="免费">
+							<span class="diyCheckBox"><b></b></span> 免费
+						</label>
+						<label for="">
+							<input type="checkBox" value="付费">
+							<span class="diyCheckBox"><b></b></span>付费
+						</label>
+					</div>
+				</div>
+				<!--数据形式-->
+				<div class="formality">
+					<h2>数据形式：</h2>
+					<div class="formalityCheck">
+						<label for="">
+							<input type="checkBox" value="不限">
+							<span class="diyCheckBox"><b></b></span> 不限
+						</label>
+						<label for="">
+							<input type="checkBox" value="API">
+							<span class="diyCheckBox"><b></b></span> API
+						</label>
+						<label for="">
+							<input type="checkBox" value="数据包">
+							<span class="diyCheckBox"><b></b></span> 数据包
+						</label>
+					</div>
+				</div>
+			</div>
+			<button type="button" class="ensure">确定</button>
+		</form>
+	</div>
+	<script src="./jquery.min.js"></script>
+	<script>
+		/*模拟的数据*/
+		var datajson = {
+				"不限": ["不限1", "不限2", "不限3", "不限4", "不限5", "不限6", "不限7", "不限8", "不限9"],
+				"产品": ["产品1", "产品2", "产品3", "产品4", "产品5", "产品6"],
+				"入口": ["入口1", "入口2", "入口3", "入口4", "入口5", "入口6", "入口7", "入口8"],
+				"企业": ["企业1", "企业2", "企业3", "企业4", "企业5", "企业6", "企业7", "企业8", "企业9", "企业10", "企业11", "企业12", ],
+				"行业": ["行业1", "行业2", "行业3", "行业4", "行业5", "行业6", "行业7"],
+				"城市": ["城市1", "城市2", "城市3", "城市4", "城市5", "城市6", "城市7", "城市8", "城市9", "城市", "城市10", "城市11", "城市12", "城市13", "城市14", "城市15", "城市16"]
+			}
+			/*时间代理，给所有的ipput绑定单击事件，并执行相关操作*/
+		$("#checkBox").on("click", "label", function () {
+				var $this_input = $(this).find("input"),
+					$this_ = $this_input.attr("type"),
+					$this_val = $this_input.val(),
+					nowDate = "data" + Date.parse(new Date()),
+					$this_i = $(this).find("i");
+				if ($this_ == "checkBox") {
+					if ($this_input.prop("checked") == true) {
+						$this_input.attr("checked", false);
+						var nowdate = $this_input.attr("data-this");
+						$("#appendDomBox").find("." + nowdate).remove();
+					} else {
+						$this_input.attr("checked", "true");
+						$this_input.attr("data-this", nowDate);
+						$this_input.attr("class", "");
+						$this_input.addClass(nowDate);
+						appendDom($this_val, nowDate)
+					}
+				} else {
+					$("#classifyCheck").find("input").attr("checked", false);
+					$this_input.attr("checked", "true");
+					$("#classifyCheck").find("i").removeClass("rotate");
+					$this_i.addClass("rotate");
+					/*模拟数据接口，渲染数据*/
+					getMes($this_val);
+				}
+			})
+			/*单选按钮选中之后渲染数据逻辑*/
+		function getMes(val) {
+			var oHtml = "";
+			$.each(datajson, function (i) {
+				if (i == val) {
+					$.each(datajson[i], function (i, v) {
+						oHtml += "<label for=''><input type='checkBox' value=" + v + "  /><span class='diyCheckBox'><b></b></span> " + v + "</label>";
+					})
+					$("#classifyDetaill").html(oHtml);
+					$("#classifyDetaill").slideUp(0);
+					$("#classifyDetaill").slideDown(200);
+				}
+			})
+		}
+
+		function appendDom(dom, nowDate) {
+			var $p = $("<p>" + dom + "</p>"),
+				$b = $("<b class='checkClose'>X</b>");
+			$("#appendDomBox").append($p);
+			$p.addClass(nowDate);
+			$b.attr("data-this", nowDate);
+			$p.append($b);
+		}
+		/*点击关闭按钮*/
+		$("#appendDomBox").on("click", ".checkClose", function () {
+				var $data_this = $(this).attr("data-this");
+				$(this).parent("p").remove();
+				$("#checkBox").find("." + $data_this).attr("checked", false);
+			})
+			/*更多*/
+		$("#more").on("click", function () {
+			if (!$(this).hasClass("active")) {
+				$("#moreDetail").slideDown(350);
+				$(this).addClass("active");
+				$(this).html("收起");
+			} else {
+				$("#moreDetail").hide();
+				$(this).removeClass("active");
+				$(this).html("更多");
+			}
+		})
+	</script>
+</body>
+
+</html>
