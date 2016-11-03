@@ -243,6 +243,10 @@
 			display: inline;
 			display: none;
 		}
+		
+		.appendDomBox p {}
+		
+		.appendDomBox span {}
 	</style>
 </head>
 
@@ -256,7 +260,11 @@
 		  			更多数据
 		  		</h1>
 				<div class="appendDomBox" id="appendDomBox">
-
+					<p class=""><span id="data1">数据分类：</span><b class="checkClose" data-close="data1" data-tit="classifyCheck">X</b></p>
+					<p class=""><span id="data2">数据分类：</span><b class="checkClose" data-close="data2" data-tit="classifyDetaill">X</b></p>
+					<p class=""><span id="data3">相关领域：</span><b class="checkClose" data-close="data3" data-tit="wayCheck">X</b></p>
+					<p class=""><span id="data4">付费方式：</span><b class="checkClose" data-close="data4" data-tit="way">X</b></p>
+					<p class=""><span id="data5">数据形式：</span><b class="checkClose" data-close="data5" data-tit="formality">X</b></p>
 				</div>
 			</div>
 			<div class="checkBoxCenter">
@@ -264,32 +272,32 @@
 				<div class="classify">
 					<h2>数据分类：</h2>
 					<div class="classifyCheck" id="classifyCheck">
-						<label for="">
+						<label for="" data-title="数据分类1：">
 							<input type="radio" name="radioBox" value="不限">
 							<span class="diyCheckBox"><b></b></span> 不限
 						</label>
 
-						<label for="">
+						<label for="" data-title="数据分类1">
 							<input type="radio" name="radioBox" value="产品">
 							<span class="diyCheckBox"><b></b></span> 产品
 							<i></i>
 						</label>
-						<label for="">
+						<label for="" data-title="数据分类1">
 							<input type="radio" name="radioBox" value="入口">
 							<span class="diyCheckBox"><b></b></span> 入口
 							<i></i>
 						</label>
-						<label for="">
+						<label for="" data-title="数据分类1">
 							<input type="radio" name="radioBox" value="企业">
 							<span class="diyCheckBox"><b></b></span> 企业
 							<i></i>
 						</label>
-						<label for="">
+						<label for="" data-title="数据分类1">
 							<input type="radio" name="radioBox" value="行业">
 							<span class="diyCheckBox"><b></b></span> 行业
 							<i></i>
 						</label>
-						<label for="">
+						<label for="" data-title="数据分类1">
 							<input type="radio" name="radioBox" value="城市">
 							<span class="diyCheckBox"><b></b></span> 城市
 							<i></i>
@@ -304,56 +312,56 @@
 				<div class="field">
 					<h2>相关领域： </h2>
 					<div class="fieldCheck">
-						<label for="">
+						<label for="" data-title="相关领域">
 							<input type="checkBox" value="不限">
 							<span class="diyCheckBox"><b></b></span>不限
 						</label>
-						<label for="">
+						<label for="" data-title="相关领域">
 							<input type="checkBox" value="北京">
 							<span class="diyCheckBox"><b></b></span> 北京
 						</label>
-						<label for="">
+						<label data-title="相关领域">
 							<input type="checkBox" value="广州">
 							<span class="diyCheckBox"><b></b></span> 广州
 						</label>
-						<label for="">
+						<label for="" data-title="相关领域">
 							<input type="checkBox" value="无锡">
 							<span class="diyCheckBox"><b></b></span> 无锡
 						</label>
-						<label for="">
+						<label for="" data-title="相关领域">
 							<input type="checkBox" value="武汉">
 							<span class="diyCheckBox"><b></b></span> 武汉
 						</label>
-						<label for="">
+						<label for="" data-title="相关领域">
 							<input type="checkBox" value="青岛">
 							<span class="diyCheckBox"><b></b></span> 青岛
 						</label>
 						<div class="moreDetail" id="moreDetail">
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
-							<label for="">
+							<label for="" data-title="相关领域">
 								<input type="checkBox" value="青岛">
 								<span class="diyCheckBox"><b></b></span> 青岛
 							</label>
@@ -362,36 +370,36 @@
 					</div>
 				</div>
 				<!--付费方式-->
-				<div class="way">
+				<div class="way" id="way">
 					<h2>付费方式：</h2>
-					<div class="wayCheck">
-						<label for="">
+					<div class="wayCheck" id="wayCheck">
+						<label for="" data-title="付费方式">
 							<input type="checkBox" value="不限">
 							<span class="diyCheckBox"><b></b></span> 不限
 						</label>
-						<label for="">
+						<label for="" data-title="付费方式">
 							<input type="checkBox" value="免费">
 							<span class="diyCheckBox"><b></b></span> 免费
 						</label>
-						<label for="">
+						<label for="" data-title="付费方式">
 							<input type="checkBox" value="付费">
 							<span class="diyCheckBox"><b></b></span>付费
 						</label>
 					</div>
 				</div>
 				<!--数据形式-->
-				<div class="formality">
+				<div class="formality" id="formality">
 					<h2>数据形式：</h2>
 					<div class="formalityCheck">
-						<label for="">
+						<label for="" data-title="数据形式">
 							<input type="checkBox" value="不限">
 							<span class="diyCheckBox"><b></b></span> 不限
 						</label>
-						<label for="">
+						<label for="" data-title="数据形式">
 							<input type="checkBox" value="API">
 							<span class="diyCheckBox"><b></b></span> API
 						</label>
-						<label for="">
+						<label for="" data-title="数据形式">
 							<input type="checkBox" value="数据包">
 							<span class="diyCheckBox"><b></b></span> 数据包
 						</label>
@@ -405,37 +413,43 @@
 	<script>
 		/*模拟的数据*/
 		var datajson = {
-				"不限": ["不限1", "不限2", "不限3", "不限4", "不限5", "不限6", "不限7", "不限8", "不限9"],
-				"产品": ["产品1", "产品2", "产品3", "产品4", "产品5", "产品6"],
-				"入口": ["入口1", "入口2", "入口3", "入口4", "入口5", "入口6", "入口7", "入口8"],
-				"企业": ["企业1", "企业2", "企业3", "企业4", "企业5", "企业6", "企业7", "企业8", "企业9", "企业10", "企业11", "企业12", ],
-				"行业": ["行业1", "行业2", "行业3", "行业4", "行业5", "行业6", "行业7"],
-				"城市": ["城市1", "城市2", "城市3", "城市4", "城市5", "城市6", "城市7", "城市8", "城市9", "城市", "城市10", "城市11", "城市12", "城市13", "城市14", "城市15", "城市16"]
-			}
-			/*时间代理，给所有的ipput绑定单击事件，并执行相关操作*/
+			"不限": ["不限1", "不限2", "不限3", "不限4", "不限5", "不限6", "不限7", "不限8", "不限9"],
+			"产品": ["产品1", "产品2", "产品3", "产品4", "产品5", "产品6"],
+			"入口": ["入口1", "入口2", "入口3", "入口4", "入口5", "入口6", "入口7", "入口8"],
+			"企业": ["企业1", "企业2", "企业3", "企业4", "企业5", "企业6", "企业7", "企业8", "企业9", "企业10", "企业11", "企业12", ],
+			"行业": ["行业1", "行业2", "行业3", "行业4", "行业5", "行业6", "行业7"],
+			"城市": ["城市1", "城市2", "城市3", "城市4", "城市5", "城市6", "城市7", "城市8", "城市9", "城市", "城市10", "城市11", "城市12", "城市13", "城市14", "城市15", "城市16"]
+		};
+		var data1 = [],
+			data2 = [],
+			data3 = [],
+			data4 = [],
+			data5 = [];
+		/*时间代理，给所有的ipput绑定单击事件，并执行相关操作*/
 		$("#checkBox").on("click", "label", function () {
 				var $this_input = $(this).find("input"),
 					$this_ = $this_input.attr("type"),
 					$this_val = $this_input.val(),
 					nowDate = "data" + Date.parse(new Date()),
-					$this_i = $(this).find("i");
+					$this_i = $(this).find("i"),
+					$this_title = $(this).attr("data-title");
 				if ($this_ == "checkBox") {
 					if ($this_input.prop("checked") == true) {
 						$this_input.attr("checked", false);
-						var nowdate = $this_input.attr("data-this");
-						$("#appendDomBox").find("." + nowdate).remove();
+						removeDom($this_val, nowDate, $this_title);
 					} else {
 						$this_input.attr("checked", "true");
 						$this_input.attr("data-this", nowDate);
 						$this_input.attr("class", "");
 						$this_input.addClass(nowDate);
-						appendDom($this_val, nowDate)
+						appendDom($this_val, nowDate, $this_title);
 					}
 				} else {
 					$("#classifyCheck").find("input").attr("checked", false);
 					$this_input.attr("checked", "true");
 					$("#classifyCheck").find("i").removeClass("rotate");
 					$this_i.addClass("rotate");
+					appendDom($this_val, nowDate, $this_title);
 					/*模拟数据接口，渲染数据*/
 					getMes($this_val);
 				}
@@ -446,7 +460,7 @@
 			$.each(datajson, function (i) {
 				if (i == val) {
 					$.each(datajson[i], function (i, v) {
-						oHtml += "<label for=''><input type='checkBox' value=" + v + "  /><span class='diyCheckBox'><b></b></span> " + v + "</label>";
+						oHtml += "<label for='' data-title='数据分类'><input type='checkBox' value=" + v + "  /><span class='diyCheckBox'><b></b></span> " + v + "</label>";
 					})
 					$("#classifyDetaill").html(oHtml);
 					$("#classifyDetaill").slideUp(0);
@@ -455,21 +469,77 @@
 			})
 		}
 
-		function appendDom(dom, nowDate) {
-			var $p = $("<p>" + dom + "</p>"),
-				$b = $("<b class='checkClose'>X</b>");
-			$("#appendDomBox").append($p);
-			$p.addClass(nowDate);
-			$b.attr("data-this", nowDate);
-			$p.append($b);
+		function appendDom(dom, nowDate, this_title) {
+			if (this_title == "数据分类1") {
+				$("#data1").html("数据分类：" + dom);
+			} else if (this_title == "数据分类") {
+				data2.push(dom);
+				$("#data2").html("数据分类：" + data2.join(","));
+			} else if (this_title == "相关领域") {
+				data3.push(dom);
+				$("#data3").html("相关领域：" + data3.join(","));
+			} else if (this_title == "付费方式") {
+				data4.push(dom);
+				$("#data4").html("付费方式：" + data4.join(","));
+			} else if (this_title == "数据形式") {
+				data5.push(dom);
+				$("#data5").html("数据形式：" + data5.join(","));
+			}
 		}
-		/*点击关闭按钮*/
+		/*删除选中的元素*/
+		function removeDom(dom, nowDate, this_title) {
+			if (this_title == "数据分类1") {
+				$("#data1").html("数据分类：" + dom);
+			} else if (this_title == "数据分类") {
+				data2.removeByValue(dom);
+				$("#data2").html("数据分类：" + data2.join(","));
+			} else if (this_title == "相关领域") {
+				data3.removeByValue(dom);
+				$("#data3").html("相关领域：" + data3.join(","));
+			} else if (this_title == "付费方式") {
+				data4.removeByValue(dom);
+				$("#data4").html("付费方式：" + data4.join(","));
+			} else if (this_title == "数据形式") {
+				data5.removeByValue(dom);
+				$("#data5").html("数据形式：" + data5.join(","));
+			}
+		}
+		/*数组删除特定的元素方法*/
+		Array.prototype.removeByValue = function (val) {
+				for (var i = 0; i < this.length; i++) {
+					if (this[i] == val) {
+						this.splice(i, 1);
+						break;
+					}
+				}
+			}
+			/*点击关闭按钮*/
 		$("#appendDomBox").on("click", ".checkClose", function () {
-				var $data_this = $(this).attr("data-this");
-				$(this).parent("p").remove();
-				$("#checkBox").find("." + $data_this).attr("checked", false);
+				var $data_close = $(this).attr("data-close"),
+					$data_tit = $(this).attr("data-tit");
+				if ($data_close == "data1") {
+					$("#data1").html("数据分类：");
+					checkFalse($data_tit);
+				} else if ($data_close == "data2") {
+					$("#data2").html("数据分类：");
+					checkFalse($data_tit);
+				} else if ($data_close == "data3") {
+					$("#data3").html("相关领域：");
+					checkFalse($data_tit);
+				} else if ($data_close == "data4") {
+					$("#data4").html("付费方式：");
+					checkFalse($data_tit);
+				} else if ($data_close == "data5") {
+					$("#data5").html("数据形式：");
+					checkFalse($data_tit);
+				}
 			})
-			/*更多*/
+			/*便利让所有的input框取消选中*/
+		function checkFalse(dom) {
+			$("#" + dom).find("input").attr("checked", false);
+
+		}
+		/*更多*/
 		$("#more").on("click", function () {
 			if (!$(this).hasClass("active")) {
 				$("#moreDetail").slideDown(350);
